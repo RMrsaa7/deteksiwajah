@@ -1,5 +1,6 @@
 import cv2
 
+#mencari indeks kamera eksternal
 def find_camera_index(max_index=20):
     print("Mencari indeks kamera...")
     for index in range(max_index): 
@@ -14,6 +15,7 @@ def find_camera_index(max_index=20):
 
 camera_index = find_camera_index()
 if camera_index is not None:
+    #menggunakan kamera bawaan
     cap = cv2.VideoCapture(camera_index)
     cap.set(3, 640)  # Lebar
     cap.set(4, 480)  # Tinggi
